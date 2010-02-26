@@ -1,0 +1,3 @@
+= Five Card
+
+A simple five card poker Radiant extension. Deals 5 cards and compares them against the current stored high hand.

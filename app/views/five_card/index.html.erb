@@ -1,0 +1,24 @@
+<h1>Listing five_cards</h1>
+
+
+<br />
+
+<%= link_to 'New five_card', new_five_card_path %>
+<table>
+  <tr>
+  </tr>
+
+<% @five_cards.each do |five_card| %>
+  <tr>
+	<td>
+	<% five_card.cards.each do |card| %>
+		<div style="float:left;">
+		<%= card %> <br />
+		<%= displayCard card  %>
+		</div>	
+	<% end %>
+	</td>
+    <td><%= Hand.new(five_card.cards).rank %> - <%= Hand.new(five_card.cards).subRank %><br /><%= link_to 'Destroy', five_card, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
