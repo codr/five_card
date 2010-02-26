@@ -15,11 +15,11 @@ class FiveCardExtension < Radiant::Extension
   end
   
   def activate
-#    admin.tabs.add "Five Card", "/admin/five_card", :after => "Layouts", :visibility => [:all]
+
   end
   
   def deactivate
-#    admin.tabs.remove "Five Card"
+
   end
   
 end
