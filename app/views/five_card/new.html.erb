@@ -12,9 +12,9 @@
 	<%= displayCard card %>
 	</div>	
 <% end %>
-<br/>
+<div style="clear:both"></div>
 <div>
-	<% form_tag :url => {:action => 'new'} do %>
+	<% form_remote_tag :url => {:action => 'new'} do %>
 		<%= submit_tag 'Deal' %>
 	<% end %>
 </div>
