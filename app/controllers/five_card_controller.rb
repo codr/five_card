@@ -20,8 +20,8 @@ class FiveCardController < ApplicationController
     
     @highest_hand = FiveCard.find(:first, :order => "created_at DESC" )
     
-    @hand = Deck.new.shuffle!.deal5Cards
-    @test_hand = FiveCard.new(:cards => @hand)
+    cards = Deck.new.shuffle!.deal5Cards
+    @test_hand = FiveCard.new(:cards => cards)
     
     if !@highest_hand
       @highest_hand = @test_hand
