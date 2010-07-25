@@ -10,13 +10,13 @@
 <% @test_hand.cards.each do |card| %>
 	<div style="float:left;">
 	<%= displayCard card %>
-		<div>
-			<% form_for :test_hand, @test_hand, :url => '/' do |f| %>
-				<%= submit_tag 'Deal' %>
-			<% end %>
-		</div>
 	</div>	
 <% end %>
+<div>
+	<% form_for :test_hand, @test_hand, :url => {:action => new} do |f| %>
+		<%= submit_tag 'Deal' %>
+	<% end %>
+</div>
 <div style="clear:both;"></div>
 
 <% if @won then %>
