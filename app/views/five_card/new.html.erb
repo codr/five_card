@@ -12,8 +12,9 @@
 	<%= displayCard card %>
 	</div>	
 <% end %>
+<br/>
 <div>
-	<% form_for :test_hand, @test_hand, :url => {:action => 'new'} do |f| %>
+	<% form_tag :url => {:action => 'new'} %>
 		<%= submit_tag 'Deal' %>
 	<% end %>
 </div>
