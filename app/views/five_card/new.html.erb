@@ -13,7 +13,7 @@
 	</div>	
 <% end %>
 <div>
-	<% form_for :test_hand, @test_hand, :url => {:action => new} do |f| %>
+	<% form_for :test_hand, @test_hand, :url => {:action => 'new'} do |f| %>
 		<%= submit_tag 'Deal' %>
 	<% end %>
 </div>
