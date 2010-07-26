@@ -3,7 +3,7 @@ class FiveCardController < ApplicationController
   # GET /five_cards.xml
   no_login_required
   
-  radiant_layout 'Normal'
+#  radiant_layout 'Normal'
   
   def index
     @five_cards = FiveCard.all.reverse #FiveCard.find(:first, :order => "created_on DESC" )

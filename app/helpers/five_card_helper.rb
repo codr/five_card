@@ -8,7 +8,14 @@ module FiveCardHelper
   CARD_WIDTH  = 73
   
   def displayCard card
-    "<div style=\"background-image:url('/images/classic-playing-cards.png');margin:1px;width:74px;height:98px;background-position:-#{(card.rank.to_i - 1) * CARD_WIDTH }px -#{SUIT_TO_INT[card.suit] * CARD_HEIGHT }px;\"></div>"
+    "<div style=\"background-image:url('/images/classic-playing-cards.png');" + 
+    'margin:2px;' +
+    'width:74px;' +
+    'height:98px;' +
+    "background-position:" + 
+      "-#{(card.rank.to_i - 1) * CARD_WIDTH }px " +
+      "-#{SUIT_TO_INT[card.suit] * CARD_HEIGHT }px;" +
+    "\"></div>"
   end
   
 end
