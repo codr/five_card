@@ -35,9 +35,13 @@ class FiveCardController < ApplicationController
       @won = false
     end
 
-    respond_to do |format|
-      format.html
-      format.xml  { render :xml => @five_card }
+    if request.xhr? then
+      render :partial => 'board', :layout => false
+    else
+      respond_to do |format|
+        format.html
+        format.xml  { render :xml => @five_card }
+      end
     end
   end
 

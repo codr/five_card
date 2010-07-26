@@ -1,27 +1,6 @@
+<%= render :partial => 'board' %>
 <div>
-<h2>Current High Hand</h2>
-<% @highest_hand.cards.each do |card| %>
-	<div style="float:left;">
-	<%= displayCard card %>
-	</div>	
-<% end %>
-<div style="clear:both;"></div>
-
-<h2>Your Hand</h2>
-<% @test_hand.cards.each do |card| %>
-	<div style="float:left;">
-	<%= displayCard card %>
-	</div>	
-<% end %>
-<div style="clear:both;"></div>
-
-<% if @won then %>
-<h2 style="color:green">You won!</h2>
-<% end %>
-<div style="clear:both"></div>
-<div>
-	<% form_remote_tag :url => {:action => 'new'} do %>
+	<% form_remote_tag :url => {:action => 'new'}, :update => 'five_card_board' do %>
 		<%= submit_tag 'Deal' %>
 	<% end %>
-</div>
 </div>
