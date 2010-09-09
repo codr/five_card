@@ -1,5 +1,5 @@
 <div style="margin: 0px auto; width: 400px;">
-<%= render :partial => 'board' %>
+<%= render :partial => 'board', :locals => { :highest_hand => @highest_hand } %>
 	<% form_remote_tag	:url => {:action => 'new'},
 						:update => 'five_card_board',
 						:loading => "Element.show('loading')",
