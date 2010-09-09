@@ -1,5 +1,27 @@
 <div style="margin: 0px auto; width: 400px;">
-<%= render :partial => 'board', :locals => { :highest_hand => @highest_hand } %>
+<%#= render :partial => 'board' %>
+<div id="five_card_board">
+	<h2>Current High Hand</h2>
+	<% @highest_hand.cards.each do |card| %>
+		<div style="float:left;">
+		<%= displayCard card %>
+		</div>	
+	<% end %>
+	<div style="clear:both;"></div>
+
+	<h2>Your Hand</h2>
+	<% @test_hand.cards.each do |card| %>
+		<div style="float:left;">
+		<%= displayCard card %>
+		</div>	
+	<% end %>
+	<div style="clear:both;"></div>
+
+	<% if @won then %>
+	<h2 style="color:green">You won!</h2>
+	<% end %>
+	<div style="clear:both"></div>
+</div>
 	<% form_remote_tag	:url => {:action => 'new'},
 						:update => 'five_card_board',
 						:loading => "Element.show('loading')",
